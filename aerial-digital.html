@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerial Digital - PPOB, Voucher Game, Entertainment Terpercaya</title>
+    <meta name="description" content="Aerial Digital: Solusi cepat dan mudah untuk PPOB, top up Voucher Game favorit, dan langganan Entertainment. Pembayaran via Nobu, Dana, dan QRIS.">
+    <!-- Impor Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ikon dasar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* --- Variabel CSS (Sama seperti sebelumnya) --- */
+        :root {
+            --primary-color: #3498db; /* Biru utama */
+            --secondary-color: #2c3e50; /* Biru tua/Abu gelap */
+            --light-gray-color: #f4f7f9; /* Abu-abu sangat muda untuk background section */
+            --text-color: #333;
+            --text-light: #555;
+            --white-color: #fff;
+            --border-color: #e0e0e0;
+            --success-color: #2ecc71; /* Hijau */
+            --success-dark-color: #27ae60;
+            --warning-light-bg: #fdf5e6; /* Latar belakang rekomendasi */
+            --warning-border: #f39c12; /* Border rekomendasi */
+            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* --- Reset & Basic Styles (Sama seperti sebelumnya) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.7; color: var(--text-color); background-color: var(--white-color); font-size: 16px; }
+        .container { max-width: 1140px; margin: auto; padding: 0 20px; overflow: hidden; }
+        h1, h2, h3 { margin-bottom: 1.2rem; color: var(--secondary-color); font-weight: 600; line-height: 1.3; }
+        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 40px; }
+        h3 { font-size: 1.6rem; }
+        p { margin-bottom: 1rem; color: var(--text-light); }
+        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s ease; }
+        a:hover { color: var(--secondary-color); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        section { padding: 70px 0; }
+        section:nth-child(even) { background-color: var(--light-gray-color); }
+        .text-center { text-align: center; }
+        .emoji-icon { font-size: 3.5rem; margin-bottom: 15px; display: inline-block; }
+
+        /* --- Tombol (Button Styles - Sama seperti sebelumnya) --- */
+        .btn { display: inline-block; background: var(--primary-color); color: var(--white-color); padding: 12px 30px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s ease, transform 0.2s ease; font-weight: 500; font-size: 1rem; box-shadow: var(--shadow-light); }
+        .btn:hover { background: var(--secondary-color); transform: translateY(-2px); }
+        .btn-whatsapp { background: var(--success-color); color: var(--white-color); }
+        .btn-whatsapp:hover { background: var(--success-dark-color); }
+        .btn-whatsapp i { margin-right: 8px; }
+
+        /* --- Header & Navigation (Sama seperti sebelumnya) --- */
+        #main-header { background: var(--white-color); box-shadow: 0 2px 8px rgba(0,0,0,0.07); position: sticky; top: 0; z-index: 1000; width: 100%; }
+        #main-header .container { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; padding-bottom: 15px; height: 70px; }
+        #main-header .logo { font-size: 1.8rem; font-weight: 700; color: var(--secondary-color); display: flex; align-items: center; }
+        #main-header .logo span { font-size: 2rem; margin-right: 8px; }
+        #main-nav ul { display: flex; }
+        #main-nav ul li { margin-left: 30px; }
+        #main-nav ul li a { color: var(--text-color); font-weight: 500; padding-bottom: 5px; position: relative; }
+        #main-nav ul li a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease; }
+        #main-nav ul li a:hover::after, #main-nav ul li a.active::after { width: 100%; }
+        #main-nav ul li a:hover, #main-nav ul li a.active { color: var(--primary-color); }
+        .menu-toggle { display: none; font-size: 1.8rem; background: none; border: none; cursor: pointer; color: var(--secondary-color); padding: 5px; }
+
+        /* --- Hero Section (Sama seperti sebelumnya) --- */
+        #hero { background: linear-gradient(rgba(44, 62, 80, 0.75), rgba(44, 62, 80, 0.75)), url('https://via.placeholder.com/1600x800/ecf0f1/bdc3c7?text=Aerial+Digital+Background') no-repeat center center/cover; color: var(--white-color); min-height: calc(80vh - 70px); display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 0; }
+        #hero h1 { font-size: 3.2rem; margin-bottom: 1rem; color: var(--white-color); text-shadow: 2px 2px 5px rgba(0,0,0,0.5); font-weight: 700; }
+        #hero p { font-size: 1.3rem; margin-bottom: 2.5rem; color: rgba(255, 255, 255, 0.9); max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* --- Products Section --- */
+        .product-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; }
+        .category-card { background: var(--white-color); border-radius: 10px; box-shadow: var(--shadow-light); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: center; padding: 35px 25px; border: 1px solid var(--border-color); display: flex; flex-direction: column; }
+        .category-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-medium); }
+        .category-card h3 { font-size: 1.4rem; margin-top: 5px; margin-bottom: 10px; }
+        .category-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 15px; flex-grow: 1; }
+
+        /* --- Styling untuk Produk Rekomendasi DI DALAM KARTU --- */
+        .recommended-product {
+            background-color: var(--warning-light-bg);
+            border: 1px solid #f7d794;
+            border-left: 5px solid var(--warning-border);
+            padding: 12px 18px;
+            margin-top: auto; /* Dorong ke bawah sebelum tombol */
+            margin-bottom: 25px; /* Jarak ke tombol */
+            border-radius: 6px;
+            font-size: 0.95rem;
+            text-align: left;
+            color: #8c7851;
+            line-height: 1.5;
+        }
+        .recommended-product strong.label {
+            font-weight: 600;
+            color: var(--warning-border);
+            margin-right: 8px;
+            display: inline-block;
+        }
+        .recommended-product .highlight {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        .recommended-product .price {
+             font-weight: 700;
+             color: var(--success-dark-color);
+             background-color: rgba(46, 204, 113, 0.1);
+             padding: 2px 5px;
+             border-radius: 4px;
+             margin-left: 5px;
+        }
+
+        /* --- Styling untuk Daftar Harga DI BAWAH KARTU --- */
+        .featured-products-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+        .featured-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+        .featured-products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        .product-list-column {
+            background-color: var(--white-color);
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+        }
+        .product-list-column h4 {
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .product-list-column h4 span[role="img"] {
+             margin-right: 8px;
+             font-size: 1.3em;
+        }
+        .product-list-column ul { list-style: none; padding: 0; margin: 0; }
+        .product-list-column li { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; font-size: 0.9rem; color: var(--text-light); border-bottom: 1px dashed #f0f0f0; }
+        .product-list-column li:last-child { border-bottom: none; }
+        .product-list-column li span.price { font-weight: 600; color: var(--secondary-color); white-space: nowrap; margin-left: 10px; text-align: right; }
+        .product-list-column li span.price-contact { font-weight: 500; font-style: italic; font-size: 0.85rem; color: var(--primary-color); }
+
+
+        /* --- How to Order / Payment Section (Sama seperti sebelumnya) --- */
+        .order-steps-payment { display: grid; grid-template-columns: 1fr; gap: 50px; align-items: start; }
+        @media (min-width: 992px) { .order-steps-payment { grid-template-columns: 1fr 1fr; } }
+        .order-steps h3, .payment-methods h3 { margin-bottom: 25px; padding-bottom: 10px; border-bottom: 2px solid var(--primary-color); display: inline-block; }
+        .order-steps ol { list-style: none; counter-reset: step-counter; padding-left: 0; }
+        .order-steps li { margin-bottom: 15px; font-size: 1.05rem; position: relative; padding-left: 45px; counter-increment: step-counter; }
+        .order-steps li::before { content: counter(step-counter); position: absolute; left: 0; top: -2px; background-color: var(--primary-color); color: var(--white-color); width: 30px; height: 30px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 600; font-size: 0.9rem; }
+        .payment-methods { background: var(--white-color); padding: 35px; border-radius: 10px; box-shadow: var(--shadow-light); border: 1px solid var(--border-color); }
+        .payment-option { margin-bottom: 25px; display: flex; align-items: center; gap: 20px; padding-bottom: 15px; border-bottom: 1px dashed var(--border-color); }
+        .payment-option:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+        .payment-icon { font-size: 2.2rem; width: 40px; text-align: center; color: var(--secondary-color); }
+        .payment-details strong { display: block; font-size: 1.1rem; margin-bottom: 4px; color: var(--text-color); font-weight: 500; }
+        .payment-details span { color: var(--text-light); font-size: 0.95rem; }
+        .payment-details code { background-color: var(--light-gray-color); padding: 2px 5px; border-radius: 4px; font-family: monospace; color: var(--primary-color); }
+        .qris-section { text-align: center; margin-top: 15px; padding-top: 20px; border-top: 1px solid var(--border-color); }
+        .qris-section img { max-width: 200px; margin: 10px auto; border: 2px solid var(--border-color); padding: 8px; background-color: var(--white-color); border-radius: 8px; }
+        .qris-section strong { display: block; margin-bottom: 5px; font-weight: 600; }
+        .qris-section span { font-size: 0.9rem; color: var(--text-light); }
+        .whatsapp-cta { text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+        .whatsapp-cta p { margin-bottom: 20px; font-size: 1.15rem; font-weight: 500; color: var(--secondary-color); }
+
+        /* --- Footer (Sama seperti sebelumnya) --- */
+        #main-footer { background: var(--secondary-color); color: var(--white-color); text-align: center; padding: 30px 0; margin-top: 0; }
+        #main-footer p { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 0; }
+
+        /* --- Responsive Design (Gabungan dari sebelumnya) --- */
+        @media (max-width: 991px) { /* Tablet */
+             h2 { font-size: 2rem; }
+             h3 { font-size: 1.4rem; }
+             .container { padding: 0 30px; }
+             .product-categories { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+             .featured-products-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; } /* Adjust grid for tablet */
+        }
+        @media (max-width: 768px) { /* Mobile large */
+            body { font-size: 15px; }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            #hero { min-height: 60vh; }
+            #hero p { font-size: 1.1rem; }
+            #main-header .container { flex-direction: column; align-items: flex-start; height: auto; padding: 15px 20px;}
+            #main-nav { width: 100%; display: none; margin-top: 15px; }
+            #main-nav.active { display: block; }
+            #main-nav ul { flex-direction: column; width: 100%; }
+            #main-nav ul li { margin: 10px 0; text-align: left; }
+            #main-nav ul li a { display: block; padding: 10px 15px; background-color: var(--light-gray-color); border-radius: 5px; }
+            #main-nav ul li a::after { display: none; }
+            #main-nav ul li a:hover { background-color: #e0e0e0; color: var(--primary-color); }
+            .menu-toggle { display: block; position: absolute; top: 20px; right: 20px; }
+            .product-categories { grid-template-columns: 1fr; gap: 25px; }
+            .category-card { padding: 30px 20px; }
+            .recommended-product { margin-bottom: 20px; padding: 10px 15px; font-size: 0.9rem;}
+            .order-steps-payment { grid-template-columns: 1fr; gap: 40px; }
+            .payment-methods { padding: 30px 20px; }
+            .featured-products-grid { grid-template-columns: 1fr; gap: 20px;} /* 1 column on mobile */
+             .product-list-column { padding: 15px 20px; }
+        }
+         @media (max-width: 480px) { /* Mobile small */
+              h1 { font-size: 2rem; }
+              #hero p { font-size: 1rem; }
+              #main-header .logo { font-size: 1.6rem; }
+              #main-header .logo span { font-size: 1.8rem; }
+              .btn { padding: 10px 20px; font-size: 0.9rem;}
+              .payment-option { flex-direction: column; align-items: flex-start; gap: 10px; }
+              .payment-icon { margin-bottom: 5px; }
+              .qris-section img { max-width: 160px; }
+              .product-list-column li { font-size: 0.85rem; padding: 8px 0; }
+         }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header id="main-header">
+        <div class="container">
+            <a href="#" class="logo">
+                <span role="img" aria-label="Rocket">🚀</span>
+                 Aerial Digital
+            </a>
+            <button class="menu-toggle" id="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#hero" class="active">Beranda</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#how-to-order">Cara Order</a></li>
+                    <li><a href="#main-footer">Kontak</a></li>
+                    <!-- === Link Download Pricelist Ditambahkan Di Sini (UPDATED) === -->
+                    <li>
+                        <a href="https://i.ibb.co.com/dszwqmYc/Price-List.jpg" download="Pricelist-AerialDigital.jpg" target="_blank" title="Unduh Daftar Harga (JPG)">
+                            <i class="fas fa-download" aria-hidden="true"></i> <!-- Ikon download -->
+                            Unduh Pricelist (.jpg)
+                        </a>
+                    </li>
+                    <!-- === Akhir Penambahan Link Download === -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h1>Aerial Digital</h1>
+            <p>Penuhi semua kebutuhan digital Anda: PPOB, Voucher Game, dan Hiburan dalam satu tempat yang cepat & terpercaya.</p>
+            <a href="#products" class="btn">Jelajahi Produk Kami</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2>Layanan Kami</h2>
+
+            <!-- === Bagian Kartu Kategori dengan Rekomendasi === -->
+            <div class="product-categories">
+                <!-- Category 1: PPOB -->
+                <div class="category-card">
+                    <span class="emoji-icon" role="img" aria-label="Receipt">🧾</span>
+                    <h3>PPOB Lengkap</h3>
+                    <p>Bayar tagihan (PLN, PDAM, BPJS), isi pulsa, paket data, e-money, dan lainnya. Praktis & anti ribet.</p>
+                    <!-- Produk Rekomendasi PPOB -->
+                    <div class="recommended-product">
+                        <strong class="label">⭐ Populer:</strong>
+                        Top up <span class="highlight">E-Wallet bebas nominal</span> (Dana, OVO, GoPay, ShopeePay, dll). Isi saldo tanpa batas minimal!
+                    </div>
+                    <a href="#how-to-order" class="btn">Info & Pesan</a>
+                </div>
+
+                <!-- Category 2: Voucher Game -->
+                <div class="category-card">
+                    <span class="emoji-icon" role="img" aria-label="Game Controller">🎮</span>
+                    <h3>Voucher Game</h3>
+                    <p>Top up game favoritmu! Mobile Legends, Free Fire, PUBG, Valorant, Steam Wallet, dll. Proses cepat!</p>
+                     <!-- Produk Rekomendasi Game -->
+                     <div class="recommended-product">
+                        <strong class="label">🔥 Hot Item (FF):</strong>
+                        Dapatkan <span class="highlight">BOOYAH PASS</span> & <span class="highlight">LEVEL UP PASS</span> Free Fire dengan harga terbaik di sini!
+                    </div>
+                    <a href="#how-to-order" class="btn">Info & Pesan</a>
+                </div>
+
+                <!-- Category 3: Entertainment -->
+                <div class="category-card">
+                     <span class="emoji-icon" role="img" aria-label="Clapper Board">🎬</span>
+                    <h3>Entertainment</h3>
+                    <p>Langganan streaming Netflix, Vidio, Spotify, Viu, dan platform hiburan lainnya. Nikmati tontonan & musik.</p>
+                    <!-- Produk Rekomendasi Entertainment -->
+                    <div class="recommended-product">
+                        <strong class="label">💎 Best Deal:</strong>
+                        Langganan <span class="highlight">Alight Motion Pro</span> 1 Tahun hanya <span class="price">Rp 7.000</span> saja! Edit video tanpa watermark.
+                    </div>
+                    <a href="#how-to-order" class="btn">Info & Pesan</a>
+                </div>
+            </div> <!-- Akhir dari .product-categories -->
+
+            <!-- === Bagian Daftar Harga/Produk Populer === -->
+            <div class="featured-products-section">
+                <h3 class="featured-title">Produk Populer & Daftar Harga</h3>
+                <div class="featured-products-grid">
+
+                    <!-- Kolom Free Fire -->
+                    <div class="product-list-column">
+                        <h4><span role="img" aria-label="Fire">🔥</span> Free Fire</h4>
+                        <ul>
+                            <li><span>50 DIAMONDS</span> <span class="price">IDR 6.980</span></li>
+                            <li><span>70 DIAMONDS</span> <span class="price">IDR 8.620</span></li>
+                            <li><span>100 DIAMONDS</span> <span class="price">IDR 13.820</span></li>
+                            <li><span>150 DIAMONDS</span> <span class="price">IDR 19.150</span></li>
+                            <li><span>200 DIAMONDS</span> <span class="price">IDR 26.090</span></li>
+                            <li><span>280 DIAMONDS</span> <span class="price">IDR 34.900</span></li>
+                            <li><span>LEVEL UP PASS</span> <span class="price price-contact">(Hubungi Kami)</span></li>
+                            <li><span>M. MINGGUAN</span> <span class="price price-contact">(Hubungi Kami)</span></li>
+                            <li><span>M. BULANAN</span> <span class="price price-contact">(Hubungi Kami)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Kolom PUBG Mobile -->
+                    <div class="product-list-column">
+                        <h4><span role="img" aria-label="Parachute">🪂</span> PUBG Mobile</h4>
+                        <ul>
+                            <li><span>60 UC</span> <span class="price">IDR 14.490</span></li>
+                            <li><span>300+25 UC</span> <span class="price">IDR 70.490</span></li>
+                            <li><span>600+60 UC</span> <span class="price">IDR 140.910</span></li>
+                            <li><span>1500+300 UC</span> <span class="price">IDR 352.150</span></li>
+                            <li><span>3000+850 UC</span> <span class="price">IDR 704.230</span></li>
+                            <li><span>6000+2100 UC</span> <span class="price">IDR 1.408.420</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Kolom Mobile Legends -->
+                    <div class="product-list-column">
+                        <h4><span role="img" aria-label="Sparkles">✨</span> Mobile Legends</h4>
+                        <ul>
+                            <li><span>50 DIAMONDS</span> <span class="price">IDR 14.490</span></li>
+                            <li><span>85 DIAMONDS</span> <span class="price">IDR 22.120</span></li>
+                            <li><span>170 DIAMONDS</span> <span class="price">IDR 44.320</span></li>
+                            <li><span>229 DIAMONDS</span> <span class="price">IDR 59.590</span></li>
+                            <li><span>278 DIAMONDS</span> <span class="price">IDR 72.910</span></li>
+                            <li><span>345 DIAMONDS</span> <span class="price">IDR 89.620</span></li> <!-- Harga disesuaikan dari data sebelumnya -->
+                            <li><span>WEEKLY DM PASS</span> <span class="price price-contact">(Hubungi Kami)</span></li>
+                            <li><span>WEEKLY DM PASS ×2</span> <span class="price price-contact">(Hubungi Kami)</span></li>
+                            <li><span>TWILIGHT PASS</span> <span class="price price-contact">(Hubungi Kami)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Kolom Genshin Impact -->
+                     <div class="product-list-column">
+                        <h4><span role="img" aria-label="Wind face">🌬️</span> Genshin Impact</h4>
+                        <ul>
+                            <li><span>60 CRYSTALS</span> <span class="price">IDR 11.390</span></li>
+                            <li><span>300+30 CRYSTALS</span> <span class="price">IDR 57.990</span></li>
+                            <li><span>980+100 CRYSTALS</span> <span class="price">IDR 174.480</span></li>
+                            <li><span>1280+140 CRYSTALS</span> <span class="price">IDR 232.390</span></li>
+                            <li><span>1980 +260 CRYSTALS</span> <span class="price">IDR 378.310</span></li>
+                            <li><span>BLESSING W. MOON</span> <span class="price price-contact">(Hubungi Kami)</span></li>
+                            <li><span>BLESSING W. MOON ×2</span> <span class="price price-contact">(Hubungi Kami)</span></li>
+                            <li><span>BLESSING W. MOON ×3</span> <span class="price price-contact">(Hubungi Kami)</span></li>
+                            <li><span>ALL PACK GENESIS</span> <span class="price price-contact">(Hubungi Kami)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Kolom Entertainment -->
+                    <div class="product-list-column">
+                        <h4><span role="img" aria-label="Television">📺</span> Entertainment</h4>
+                        <ul>
+                            <li><span>BSTATION/BILIBILI</span> <span class="price price-contact">(Tersedia)</span></li>
+                            <li><span>GENFLIX</span> <span class="price price-contact">(Tersedia)</span></li>
+                            <li><span>VISION+</span> <span class="price price-contact">(Tersedia)</span></li>
+                            <li><span>VIU PREMIUM</span> <span class="price price-contact">(Tersedia)</span></li>
+                            <li><span>VIDIO PLATINUM</span> <span class="price price-contact">(Tersedia)</span></li>
+                            <li><span>ALIGHT MOTION PRO</span> <span class="price">Rp 7.000/Thn</span></li>
+                            <li><span>CANVA PRO</span> <span class="price price-contact">(Tersedia)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Kolom Lainnya -->
+                    <div class="product-list-column">
+                        <h4><span role="img" aria-label="Globe showing Asia-Australia">🌏</span> Lainnya</h4>
+                        <ul>
+                            <li><span>GOOGLE PLAY</span> <span class="price price-contact">(Voucher)</span></li>
+                            <li><span>WIFI TELKOM</span> <span class="price price-contact">(Bayar Tagihan)</span></li>
+                            <li><span>PULSA NASIONAL</span> <span class="price price-contact">(All Operator)</span></li>
+                            <li><span>PAKET DATA</span> <span class="price price-contact">(All Operator)</span></li>
+                            <li><span>TOKEN PLN</span> <span class="price price-contact">(Prabayar)</span></li>
+                            <li><span>INTERNET BULANAN</span> <span class="price price-contact">(Tagihan)</span></li>
+                            <li><span>TV BULANAN</span> <span class="price price-contact">(Tagihan)</span></li>
+                        </ul>
+                    </div>
+
+                </div> <!-- Akhir dari .featured-products-grid -->
+            </div> <!-- Akhir dari .featured-products-section -->
+
+        </div> <!-- Akhir dari .container di section#products -->
+    </section> <!-- Akhir dari section#products -->
+
+
+    <!-- How to Order & Payment Section -->
+    <section id="how-to-order">
+        <div class="container">
+            <h2>Cara Pemesanan & Pembayaran</h2>
+            <div class="order-steps-payment">
+                <div class="order-steps">
+                    <h3>Langkah Mudah Memesan:</h3>
+                    <ol>
+                        <li>Pilih produk yang Anda inginkan (PPOB/Game/Entertainment).</li>
+                        <li>Siapkan detail yang diperlukan (No. HP/ID Game/No. Pelanggan).</li>
+                        <li>Klik tombol WhatsApp di bawah. <span style="font-size:0.9em; color: var(--text-light);">(Format pesanan akan otomatis muncul).</span></li>
+                        <li>Lengkapi format pesanan yang muncul di WhatsApp.</li>
+                        <li>Lakukan pembayaran ke salah satu metode berikut.</li>
+                        <li>Kirim bukti pembayaran via WhatsApp.</li>
+                        <li>Pesanan Anda diproses secepatnya setelah konfirmasi!</li>
+                    </ol>
+                </div>
+
+                <div class="payment-methods">
+                    <h3>Metode Pembayaran Aman:</h3>
+                    <div class="payment-option">
+                        <div class="payment-icon" role="img" aria-label="Bank">🏦</div>
+                        <div class="payment-details">
+                            <strong>Nobu Bank</strong>
+                            <span>No. Rek: <code>8610 0785 752</code></span>
+                            <span>Atas Nama: <strong>ALD****</strong></span>
+                        </div>
+                    </div>
+                    <div class="payment-option">
+                        <div class="payment-icon" role="img" aria-label="Money with Wings">💸</div>
+                        <div class="payment-details">
+                            <strong>Dana</strong>
+                            <span>No: <code>0851-4712-3387</code></span>
+                            <span>Atas Nama: <strong>ALD****</strong></span>
+                        </div>
+                    </div>
+                    <div class="payment-option qris-section">
+                         <div class="payment-details" style="width:100%; text-align:center;">
+                            <strong><span role="img" aria-label="Sparkles">✨</span> QRIS (All Payment)</strong>
+                            <span>Scan kode di bawah ini menggunakan E-Wallet atau M-Banking Anda:</span>
+                             <!-- PENTING: Ganti dengan URL gambar QRIS Anda yang sebenarnya! -->
+                            <img src="https://via.placeholder.com/200x200/ffffff/000000?text=GANTI+DENGAN+QRIS+ANDA" alt="Kode QRIS Pembayaran Aerial Digital">
+                             <span>Atas Nama: <strong>Aerial Digital / ALD***</strong> (Pastikan sesuai saat scan)</span>
+                        </div>
+                    </div>
+                     <div class="whatsapp-cta">
+                        <p>Ada pertanyaan atau langsung mau order?</p>
+                        <!-- Link WhatsApp dengan format pesan -->
+                        <a href="https://wa.me/6285796158860?text=Halo%20Aerial%20Digital%2C%20saya%20ingin%20memesan%3A%0A%0A%2A-%20%5B%20DATA%20FORMAT%20%5D%20-%2A%0A%0AID%3A%0AProduk%3A%0AAplikasi%3A%0AUsername%3A%0A%0AMohon%20diisi%20detailnya%20ya.%20Terima%20kasih%21" class="btn btn-whatsapp" target="_blank">
+                           <i class="fab fa-whatsapp" aria-hidden="true"></i> Chat via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="main-footer">
+        <div class="container">
+            <p>© <span id="current-year"></span> Aerial Digital. Layanan Digital Terpercaya Anda.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- JavaScript (Sama seperti sebelumnya, tidak perlu diubah) ---
+        const menuButton = document.getElementById('mobile-menu-button');
+        const nav = document.getElementById('main-nav');
+        const navLinks = nav.querySelectorAll('a');
+        menuButton.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const icon = menuButton.querySelector('i');
+            if (nav.classList.contains('active')) {
+                icon.classList.remove('fa-bars'); icon.classList.add('fa-times');
+                menuButton.setAttribute('aria-expanded', 'true');
+            } else {
+                icon.classList.remove('fa-times'); icon.classList.add('fa-bars');
+                menuButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    const icon = menuButton.querySelector('i');
+                    icon.classList.remove('fa-times'); icon.classList.add('fa-bars');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                }
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+             let current = '';
+             sections.forEach(section => {
+                 const sectionTop = section.offsetTop;
+                 if (pageYOffset >= sectionTop - 80) { current = section.getAttribute('id'); }
+             });
+             if (current === '' && pageYOffset < 300) { current = 'hero'; }
+             if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50) {
+                 const lastSectionId = sections[sections.length-1].getAttribute('id');
+                 const contactLink = document.querySelector('nav a[href="#main-footer"]');
+                 if(contactLink) current = 'main-footer'; else current = lastSectionId;
+             }
+             navLinks.forEach(link => {
+                 link.classList.remove('active');
+                 const linkHref = link.getAttribute('href').substring(1);
+                 if (linkHref === current) { link.classList.add('active'); }
+             });
+         });
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
